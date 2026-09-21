@@ -710,6 +710,174 @@
         "people": 7,
         "severity": "high"
       }
+    },
+    {
+      "id": "R19",
+      "at": 44,
+      "title": "Cedar Point Apartments",
+      "channel": "calls",
+      "condition": "Clear / routine",
+      "raw": "North School neighbor block, Cedar Point Apartments. Nine of us are on the third-floor landing; the stairwell below is blocked with debris.",
+      "sensor": "C3 \u00b7 optical: nine stationary figures on an upper landing. Clear sightline.",
+      "ai": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high",
+        "confidence": 95,
+        "reason": "Nine optical detections + caller headcount \u2192 nine residents stranded at C3.",
+        "summary": "Nine residents need pickup at Cedar Point Apartments."
+      },
+      "truth": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high"
+      },
+      "reveal": "The caller and the image agree.",
+      "source": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R20",
+      "at": 96,
+      "title": "Harborview Care Home",
+      "channel": "sensors",
+      "condition": "Dark / occluded",
+      "raw": "Harborview night attendant: eleven residents in the ground-floor day room, none can walk unassisted.",
+      "sensor": "A2 \u00b7 optical: cluster of eleven low-mobility figures. Night pass, partial occlusion.",
+      "ai": {
+        "block": "A2",
+        "people": 11,
+        "severity": "high",
+        "confidence": 88,
+        "reason": "Eleven low-mobility detections + attendant call \u2192 eleven residents at A2.",
+        "summary": "Eleven residents need pickup at Harborview Care Home."
+      },
+      "truth": {
+        "block": "A2",
+        "people": 11,
+        "severity": "high"
+      },
+      "reveal": "The attendant's count matches the night pass.",
+      "source": {
+        "block": "A2",
+        "people": 11,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R21",
+      "at": 148,
+      "title": "Riverside Warehouse Loft",
+      "channel": "network",
+      "condition": "Device proxy",
+      "raw": "Automated beacon ping, Riverside Warehouse Loft: five registered handsets active on the mezzanine level.",
+      "sensor": "D2 \u00b7 device cluster: five active handsets, no optical confirmation available.",
+      "ai": {
+        "block": "D2",
+        "people": 5,
+        "severity": "high",
+        "confidence": 74,
+        "reason": "Five device pings clustered on one floor \u2192 five residents assumed present at D2.",
+        "summary": "Five residents likely stranded at the Riverside Warehouse Loft."
+      },
+      "truth": {
+        "block": "D2",
+        "people": 5,
+        "severity": "high"
+      },
+      "reveal": "A field check confirmed five people on the mezzanine.",
+      "source": {
+        "block": "D2",
+        "people": 5,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R22",
+      "at": 206,
+      "title": "Old Mill Overlook",
+      "channel": "calls",
+      "condition": "Relay degraded",
+      "raw": "Old Mill Overlook, ground level. Eight of us climbed onto the loading dock when the access road flooded.",
+      "sensor": "A3 \u00b7 relay fallback fix: eight figures reported, error radius one sector.",
+      "ai": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high",
+        "confidence": 81,
+        "reason": "Fallback relay position + caller headcount \u2192 eight residents assigned to A3.",
+        "summary": "Eight residents need pickup at the Old Mill Overlook."
+      },
+      "truth": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high"
+      },
+      "reveal": "The fallback fix held; all eight are at the reported dock.",
+      "source": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R23",
+      "at": 268,
+      "title": "Grove Crossing Annex",
+      "channel": "sensors",
+      "condition": "Restored / routine",
+      "raw": "Grove Crossing Annex custodian: six of us are on the loading platform behind the transit hall.",
+      "sensor": "C4 \u00b7 optical: six stationary figures on a raised platform. Fresh fix, open sightline.",
+      "ai": {
+        "block": "C4",
+        "people": 6,
+        "severity": "high",
+        "confidence": 96,
+        "reason": "Six optical detections + custodian headcount \u2192 six residents at C4.",
+        "summary": "Six residents need pickup at the Grove Crossing Annex."
+      },
+      "truth": {
+        "block": "C4",
+        "people": 6,
+        "severity": "high"
+      },
+      "reveal": "The custodian's count matches the fresh image.",
+      "source": {
+        "block": "C4",
+        "people": 6,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R24",
+      "at": 320,
+      "title": "Sunset Terrace Block",
+      "channel": "calls",
+      "condition": "Restored / routine",
+      "raw": "Sunset Terrace Block, rooftop access. Seven neighbors gathered here after the stairwell flooded below.",
+      "sensor": "B4 \u00b7 optical: seven stationary figures on a rooftop. Fresh fix, open sightline.",
+      "ai": {
+        "block": "B4",
+        "people": 7,
+        "severity": "high",
+        "confidence": 97,
+        "reason": "Seven optical detections + caller headcount \u2192 seven residents at B4.",
+        "summary": "Seven residents need pickup at Sunset Terrace Block."
+      },
+      "truth": {
+        "block": "B4",
+        "people": 7,
+        "severity": "high"
+      },
+      "reveal": "All seven residents are at the reported rooftop.",
+      "source": {
+        "block": "B4",
+        "people": 7,
+        "severity": "high"
+      }
     }
   ],
   "roadIncidents": [
@@ -748,6 +916,42 @@
       ],
       "workSeconds": 10,
       "description": "Evacuees have filled the junction. Vehicles lose eight seconds here. Send a ground team to direct traffic."
+    },
+    {
+      "id": "RD4",
+      "at": 70,
+      "title": "Ridge Road backup",
+      "kind": "congestion",
+      "edge": [
+        "A2",
+        "B2"
+      ],
+      "workSeconds": 10,
+      "description": "Evacuation traffic has backed up along Ridge Road. Vehicles lose eight seconds here. Send a ground team to direct traffic."
+    },
+    {
+      "id": "RD5",
+      "at": 140,
+      "title": "Waterfront gridlock",
+      "kind": "congestion",
+      "edge": [
+        "C1",
+        "D1"
+      ],
+      "workSeconds": 10,
+      "description": "Waterfront lanes have gridlocked as residents merge toward the pier. Vehicles lose eight seconds here. Send a ground team to direct traffic."
+    },
+    {
+      "id": "RD6",
+      "at": 250,
+      "title": "Hillside bottleneck",
+      "kind": "congestion",
+      "edge": [
+        "B3",
+        "B4"
+      ],
+      "workSeconds": 10,
+      "description": "Uphill traffic has bottlenecked below the Research Annex. Vehicles lose eight seconds here. Send a ground team to direct traffic."
     }
   ],
   "colleagues": [

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10191d">
+  <meta name="description" content="A rescue command game about the judgment between a signal and a decision.">
+  <title>Disaster Watch — Pelagos Command</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2310191d'/%3E%3Cpath d='M6 30q9-20 18 0t18 0M6 20q9-20 18 0t18 0' stroke='%23d4ed95' fill='none' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game">
+    <section class="playfield" aria-label="Rescue map">
+      <div class="map-wrap" id="map-wrap"><canvas id="map" aria-label="Coastal town map. Select a sector, report, road incident, or reception hub."></canvas>
+        <div class="map-tools"><span id="wifi" title="Relay connected" aria-label="Relay connected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a15 15 0 0 1 18 0M6 12a10 10 0 0 1 12 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg></span><button id="sound" title="Sound" aria-label="Toggle sound">♪</button><button id="help" title="How to play" aria-label="How to play">?</button><button id="pause" title="Pause game" aria-label="Pause game" aria-pressed="false">Ⅱ</button><button id="speed" title="Simulation speed">1×</button></div>
+        <div id="colleague" class="colleague" hidden aria-live="polite"></div>
+        <div id="feedback" class="feedback" aria-live="polite" hidden></div>
+        <div id="critical-alert" class="critical-alert" hidden role="alert" aria-live="assertive">
+          <span class="warning-triangle" aria-hidden="true"><b>!</b></span>
+          <span class="critical-copy"><strong>TSUNAMI IMPACT</strong><small id="critical-countdown">CRITICAL IMPACT PHASE</small></span>
+        </div>
+        <div class="evac-strip" aria-label="Evacuation route broadcast">
+          <span class="evac-icon">↗</span><label><span>Guide</span><select id="sector-select" aria-label="Evacuation origin"></select></label><span class="route-arrow">→</span><label><span class="sr-only">Reception hub</span><select id="shelter-select" aria-label="Reception hub"></select></label><button id="broadcast" title="Broadcast this walking route">Broadcast</button>
+        </div>
+      </div>
+      <div id="fleet" class="fleet" aria-label="Choose a unit"></div>
+    </section>
+    <aside class="radio-panel">
+      <div class="radio-heading"><h2>Radio</h2><span id="pending"></span><button id="restart-link" title="Restart shift" aria-label="Restart shift">↻</button></div>
+      <div class="stream-tabs" role="tablist" aria-label="Message channel"><button data-tab="all" role="tab" aria-selected="true" class="active">All</button><button data-tab="calls" role="tab" aria-selected="false">Calls</button><button data-tab="sensors" role="tab" aria-selected="false">Field</button><button data-tab="network" role="tab" aria-selected="false">Roads</button></div>
+      <div class="chat-scroll" id="report-list" aria-label="Radio messages"><div class="radio-empty"><span></span><strong>Radio clear</strong><small>Waiting for incoming traffic…</small></div></div>
+      <button id="new-messages" class="new-messages" hidden>New messages ↓</button>
+      <div class="assistant-controls"><div class="assistant-heading"><span>Assistant</span><small id="assistant-status">All off</small></div><div class="switch-grid">
+        <button class="switch" data-setting="aggregate" role="switch" aria-checked="false"><span>Map reports</span><i></i></button><button class="switch" data-setting="filter" role="switch" aria-checked="false"><span>Filter noise</span><i></i></button><button class="switch" data-setting="routes" role="switch" aria-checked="false"><span>Suggest routes</span><i></i></button><button class="switch" data-setting="calls" role="switch" aria-checked="false"><span>Summarize calls</span><i></i></button>
+      </div></div>
+    </aside>
+  </main>
+  <div id="pause-screen" class="pause-screen" hidden role="dialog" aria-modal="true" aria-labelledby="pause-title">
+    <div class="pause-card"><span>PELAGOS COMMAND</span><h1 id="pause-title">PAUSED</h1><p>The response clock is stopped.</p><button id="resume" class="primary-button">Resume <small>ESC</small></button></div>
+  </div>
+  <div id="intro" class="modal-backdrop">
+    <section class="briefing modal" role="dialog" aria-modal="true" aria-labelledby="brief-title">
+      <div class="brief-header"><span class="eyebrow">PELAGOS CIVIL DEFENSE</span><span class="tag">MISSION 01</span></div>
+      <div class="briefing-art" aria-hidden="true"><div class="orbital-ring r1"></div><div class="orbital-ring r2"></div><div class="orbital-ring r3"></div><span class="art-cross">+</span><div class="wave-stroke">≋</div><span class="art-label">A SIGNAL IS NOT THE WHOLE PICTURE.</span></div>
+      <span class="eyebrow lime">PELAGOS · FIRST RESPONSE</span>
+      <h1 id="brief-title">Disaster Watch</h1>
+      <p class="brief-copy">You have a colony to evacuate and an AI to help you see it. Read the evidence. Send your limited fleet. Know when to trust the picture—and when to look closer.</p>
+      <div class="brief-steps"><div><b>01</b><strong>Read the signal</strong><p>Select a report. Its confidence is a claim; its sources are evidence.</p></div><div><b>02</b><strong>Make the call</strong><p>Trust and dispatch, scan with a drone, or correct the assessment.</p></div><div><b>03</b><strong>Guide people out</strong><p>Broadcast a sector's route to a reception hub. Trapped residents need a unit.</p></div></div>
+      <div class="brief-bottom"><span>2 ground teams · 2 skiffs · 1 airlift · 10 drones<br><small>Esc pauses. English voices and radio sound enabled at start.</small></span><button id="begin" class="primary-button" disabled>Loading mission… <span>→</span></button></div>
+      <p id="load-error" class="error" hidden></p>
+    </section>
+  </div>
+
+  <dialog id="guide" class="guide modal"><button id="close-guide" class="close-button" aria-label="Close field guide">×</button><span class="eyebrow lime">FIELD GUIDE</span><h2>The signal needs a second look.</h2><p><b>The water keeps moving while this guide is open.</b></p><dl><dt>Read before you commit</dt><dd>Select a message or a location on the map. Drag a unit category onto a street or report. Or select a category, choose a destination, and press Send. All assistant functions start off. Expand its original source. District labels, sensor limitations, and source IDs are clues.</dd><dt>Trust / verify / override</dt><dd>With map reports enabled, dispatch uses the AI assessment. With it off, dispatch uses the direct source location. A drone takes 5 seconds to reach the site, 15 to scan, and 5 to return. It reveals field evidence at the end of its scan. Correct lets you change sector and priority; then dispatch to act. Archive a report you judge empty or duplicated.</dd><dt>Capacity and movement</dt><dd>Ground teams carry 8 people and can clear collisions, bridge approaches, and traffic jams. Skiffs follow open corridors and carry up to 16 people. The airlift crosses terrain and carries 12. Select a reception hub with space. A dispatch reserves one full load until the unit returns.</dd><dt>Broadcast evacuation</dt><dd>Select a sector and a hub, then broadcast its route. Walking residents leave in groups of four rather than one. Rescue units are still needed for trapped residents.</dd><dt>Assistant controls</dt><dd>Map fusion adds AI markers. Noise filter focuses Radio on the selected unit. For rescue boats, it keeps only waterfront people, explicit water incidents, and water-specific operations; inland calls and general traffic are hidden. Route advice draws suggested paths. Call summaries simplify incoming calls; original sources remain available in Source streams.</dd><dt>Changing conditions</dt><dd>The shift moves from clear conditions to blind spots, then a relay outage and recovery. A restored relay does not mean every source is perfect. Compare independent evidence.</dd></dl><p class="muted">The scenario and AI are scripted. This is a fictional decision game, not an emergency procedure.</p></dialog>
+  <div id="debrief" class="modal-backdrop" hidden></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

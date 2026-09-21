@@ -1,0 +1,13 @@
+{
+  "name": "disaster-watch",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "A deterministic rescue-command game about calibrated trust in AI.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test --test-reporter=spec tests/*.test.mjs",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "check": "node --check src/app.js && node --check src/engine.js && node --check src/map.js && node --check src/audio.js && node --check src/review.js"
+  }
+}

@@ -1,0 +1,805 @@
+{
+  "name": "The quiet shore",
+  "location": "PELAGOS \u00b7 COLONY 07",
+  "duration": 360,
+  "droneSeconds": 20,
+  "blocks": [
+    {
+      "id": "A1",
+      "name": "WEST DOCK",
+      "type": "Ferry terminal",
+      "walkers": 12,
+      "terrain": "Open"
+    },
+    {
+      "id": "B1",
+      "name": "TIDE MARKET",
+      "type": "Market district",
+      "walkers": 14,
+      "terrain": "Open"
+    },
+    {
+      "id": "C1",
+      "name": "REEF HOMES",
+      "type": "Residential",
+      "walkers": 10,
+      "terrain": "Open"
+    },
+    {
+      "id": "D1",
+      "name": "EAST PIER",
+      "type": "Harbor works",
+      "walkers": 8,
+      "terrain": "Open"
+    },
+    {
+      "id": "A2",
+      "name": "ELDER GROVE",
+      "type": "Care home \u00b7 night staff",
+      "walkers": 6,
+      "terrain": "Ridge shadow"
+    },
+    {
+      "id": "B2",
+      "name": "CIVIC OFFICES",
+      "type": "Offices \u00b7 automated devices",
+      "walkers": 4,
+      "terrain": "Open"
+    },
+    {
+      "id": "C2",
+      "name": "OLD QUARTER",
+      "type": "Low-connectivity homes",
+      "walkers": 12,
+      "terrain": "Dense buildings"
+    },
+    {
+      "id": "D2",
+      "name": "GLASS GARDEN",
+      "type": "Care home \u00b7 evacuated",
+      "walkers": 0,
+      "terrain": "Open"
+    },
+    {
+      "id": "A3",
+      "name": "LOWER CLINIC",
+      "type": "Clinic",
+      "walkers": 8,
+      "terrain": "Ridge shadow"
+    },
+    {
+      "id": "B3",
+      "name": "RELAY SQUARE",
+      "type": "Communications hub",
+      "walkers": 10,
+      "terrain": "Open"
+    },
+    {
+      "id": "C3",
+      "name": "NORTH SCHOOL",
+      "type": "School \u00b7 evening club",
+      "walkers": 14,
+      "terrain": "Dense buildings"
+    },
+    {
+      "id": "D3",
+      "name": "TRANSIT YARD",
+      "type": "Transit depot",
+      "walkers": 12,
+      "terrain": "Open"
+    },
+    {
+      "id": "A4",
+      "name": "HILL HOMES",
+      "type": "Residential",
+      "walkers": 10,
+      "terrain": "Open"
+    },
+    {
+      "id": "B4",
+      "name": "RESEARCH ANNEX",
+      "type": "Research \u00b7 staffed late",
+      "walkers": 6,
+      "terrain": "Open"
+    },
+    {
+      "id": "C4",
+      "name": "GROVE CROSSING",
+      "type": "Public transport",
+      "walkers": 8,
+      "terrain": "Open"
+    },
+    {
+      "id": "D4",
+      "name": "EAST TERRACE",
+      "type": "Residential",
+      "walkers": 10,
+      "terrain": "Open"
+    }
+  ],
+  "shelters": [
+    {
+      "id": "S1",
+      "name": "West Haven",
+      "capacity": 90
+    },
+    {
+      "id": "S2",
+      "name": "Summit Hub",
+      "capacity": 100
+    },
+    {
+      "id": "S3",
+      "name": "East Haven",
+      "capacity": 90
+    },
+    {
+      "id": "S4",
+      "name": "West Ridge Refuge",
+      "capacity": 70
+    }
+  ],
+  "units": [
+    {
+      "id": "SK-01",
+      "name": "Skiff One",
+      "kind": "skiff",
+      "capacity": 16,
+      "home": "S1"
+    },
+    {
+      "id": "SK-02",
+      "name": "Skiff Two",
+      "kind": "skiff",
+      "capacity": 16,
+      "home": "S3"
+    },
+    {
+      "id": "AL-01",
+      "name": "Airlift",
+      "kind": "air",
+      "capacity": 12,
+      "home": "S2"
+    },
+    {
+      "id": "GT-01",
+      "name": "Ground One",
+      "kind": "ground",
+      "capacity": 8,
+      "home": "S1"
+    },
+    {
+      "id": "GT-02",
+      "name": "Ground Two",
+      "kind": "ground",
+      "capacity": 8,
+      "home": "S3"
+    }
+  ],
+  "systems": [
+    {
+      "at": 30,
+      "text": "Water advancing from the northern shore. Walking residents choose nearby inland corridors unless you broadcast guidance."
+    },
+    {
+      "at": 118,
+      "text": "Glass Garden evacuation ledger confirmed: all residents relocated before this shift."
+    },
+    {
+      "at": 200,
+      "text": "RELAY FAILURE: location fusion unreliable. Repeated transmissions may refer to the same group."
+    },
+    {
+      "at": 260,
+      "text": "RELAY RESTORED: fresh position fixes online."
+    },
+    {
+      "at": 300,
+      "text": "Final inland sweep. Reception hubs remain above the waterline. Units already carrying residents will complete their return."
+    }
+  ],
+  "noise": [
+    "ORBIT STORE: your wishlisted game is 40% off. This offer survives the weekend.",
+    "CALENDAR: team sync in Conference Pod 4. Attendance is still marked mandatory.",
+    "RABBIT NEWS: reporter asks whether the command center has a comment.",
+    "PERSONAL: the station cat has occupied your spare chair.",
+    "CANTEEN: last call for noodles. Reply ALL to place your order."
+  ],
+  "events": [
+    {
+      "id": "R01",
+      "at": 0,
+      "title": "Stranded at West Dock",
+      "channel": "calls",
+      "condition": "Clear / routine",
+      "raw": "West Dock dispatcher: eight ferry workers on the loading platform. The exit ramp is gone. We need a pickup.",
+      "sensor": "A1 \u00b7 optical: eight stationary figures. Clear sightline; ferry-platform match.",
+      "ai": {
+        "block": "A1",
+        "people": 8,
+        "severity": "high",
+        "confidence": 96,
+        "reason": "Eight optical detections + dock dispatcher \u2192 eight residents stranded at A1.",
+        "summary": "Eight ferry workers need evacuation from the dock."
+      },
+      "truth": {
+        "block": "A1",
+        "people": 8,
+        "severity": "high"
+      },
+      "reveal": "The dispatcher and image agree.",
+      "source": {
+        "block": "A1",
+        "people": 8,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R02",
+      "at": 8,
+      "title": "Market rooftop",
+      "channel": "calls",
+      "condition": "Clear / routine",
+      "raw": "We're six market vendors on the roof by the blue sign. One of us cannot climb back down.",
+      "sensor": "B1 \u00b7 rooftop beacon and six optical detections. Daylight, unobstructed.",
+      "ai": {
+        "block": "B1",
+        "people": 6,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Rooftop beacon + six visible figures \u2192 urgent pickup at the market.",
+        "summary": "Six vendors stranded on the market roof."
+      },
+      "truth": {
+        "block": "B1",
+        "people": 6,
+        "severity": "high"
+      },
+      "reveal": "Six residents are waiting at the beacon.",
+      "source": {
+        "block": "B1",
+        "people": 6,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R03",
+      "at": 17,
+      "title": "Reef Homes stairwell",
+      "channel": "calls",
+      "condition": "Clear / routine",
+      "raw": "Reef Homes, east stairwell. There are ten of us. The ground floor is cut off, but everyone is together.",
+      "sensor": "C1 \u00b7 ten device positions coincide with a confirmed residential call.",
+      "ai": {
+        "block": "C1",
+        "people": 10,
+        "severity": "high",
+        "confidence": 93,
+        "reason": "Caller headcount corroborated by local beacon \u2192 ten residents at C1.",
+        "summary": "Ten residents isolated above the ground floor."
+      },
+      "truth": {
+        "block": "C1",
+        "people": 10,
+        "severity": "high"
+      },
+      "reveal": "Caller location and count are accurate.",
+      "source": {
+        "block": "C1",
+        "people": 10,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R04",
+      "at": 28,
+      "title": "Pier maintenance crew",
+      "channel": "sensors",
+      "condition": "Clear / routine",
+      "raw": "East Pier crew: four workers at the service gantry. Access is damaged. We have a flashing work lamp.",
+      "sensor": "D1 \u00b7 four figures beside a coded work lamp. Positive structure match.",
+      "ai": {
+        "block": "D1",
+        "people": 4,
+        "severity": "high",
+        "confidence": 97,
+        "reason": "Coded work lamp + four optical detections \u2192 crew awaiting rescue.",
+        "summary": "Four maintenance workers on the East Pier gantry."
+      },
+      "truth": {
+        "block": "D1",
+        "people": 4,
+        "severity": "high"
+      },
+      "reveal": "The gantry crew matches the report.",
+      "source": {
+        "block": "D1",
+        "people": 4,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R05",
+      "at": 53,
+      "title": "West Dock second call",
+      "channel": "calls",
+      "condition": "Clear / routine",
+      "raw": "Different group here, south warehouse at West Dock. Five of us were trapped when the shutters jammed.",
+      "sensor": "A1 \u00b7 independent warehouse beacon. Distinct source from the ferry platform.",
+      "ai": {
+        "block": "A1",
+        "people": 5,
+        "severity": "high",
+        "confidence": 92,
+        "reason": "Distinct warehouse beacon and caller \u2192 separate group, not a repeated dock report.",
+        "summary": "Five warehouse staff; a separate group from the first call."
+      },
+      "truth": {
+        "block": "A1",
+        "people": 5,
+        "severity": "high"
+      },
+      "reveal": "A separate group of five is inside the warehouse.",
+      "source": {
+        "block": "A1",
+        "people": 5,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R06",
+      "at": 110,
+      "title": "Elder Grove: low activity",
+      "channel": "calls",
+      "condition": "Dark / occluded",
+      "raw": "Elder Grove night nurse. Twelve residents cannot walk. The ward is behind the ridge. Our corridor lights have failed.",
+      "sensor": "A2 \u00b7 optical: low contrast, ridge occlusion. Two device signals. Building use: residential care.",
+      "ai": {
+        "block": "A2",
+        "people": 2,
+        "severity": "low",
+        "confidence": 91,
+        "reason": "Two active signals + no clear optical cluster \u2192 low occupancy, low priority.",
+        "summary": "Two possible occupants. Low-priority assistance request."
+      },
+      "truth": {
+        "block": "A2",
+        "people": 12,
+        "severity": "high"
+      },
+      "reveal": "Twelve residents need assisted evacuation. The ridge hid the ward.",
+      "source": {
+        "block": "A2",
+        "people": 12,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R07",
+      "at": 118,
+      "title": "Civic Offices: signal cluster",
+      "channel": "sensors",
+      "condition": "Device proxy",
+      "raw": "Building custodian: Civic Offices closed at dusk. The server racks and desk terminals stay powered overnight.",
+      "sensor": "B2 \u00b7 84 active device signals. Access ledger: staff departure complete. No current optical headcount.",
+      "ai": {
+        "block": "B2",
+        "people": 84,
+        "severity": "high",
+        "confidence": 98,
+        "reason": "84 active device signals \u2192 dense resident cluster, immediate rescue recommended.",
+        "summary": "Large occupancy detected in Civic Offices."
+      },
+      "truth": {
+        "block": "B2",
+        "people": 0,
+        "severity": "low"
+      },
+      "reveal": "Only powered terminals remain. Device activity was not a headcount.",
+      "source": {
+        "block": "B2",
+        "people": 0,
+        "severity": "low"
+      }
+    },
+    {
+      "id": "R08",
+      "at": 127,
+      "title": "Old Quarter: no signals",
+      "channel": "calls",
+      "condition": "Device proxy",
+      "raw": "I'm calling from the public terminal. Ten neighbors are stuck upstairs in Old Quarter. None of them have a working personal communicator.",
+      "sensor": "C2 \u00b7 zero personal-device signals. Public-terminal call located. Dense roof cover.",
+      "ai": {
+        "block": "C2",
+        "people": 0,
+        "severity": "low",
+        "confidence": 95,
+        "reason": "Zero active personal signals \u2192 sector likely evacuated. No rescue priority.",
+        "summary": "Old Quarter appears clear; isolated terminal activity."
+      },
+      "truth": {
+        "block": "C2",
+        "people": 10,
+        "severity": "high"
+      },
+      "reveal": "Ten residents were invisible to the personal-device proxy.",
+      "source": {
+        "block": "C2",
+        "people": 10,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R09",
+      "at": 137,
+      "title": "Glass Garden care home",
+      "channel": "network",
+      "condition": "Clear / routine",
+      "raw": "Glass Garden supervisor: all residents transferred before nightfall. Signed evacuation ledger is attached. Please keep the access lane open.",
+      "sensor": "D2 \u00b7 empty rooms on fresh optical sweep. Evacuation ledger verified by reception.",
+      "ai": {
+        "block": "D2",
+        "people": 0,
+        "severity": "low",
+        "confidence": 96,
+        "reason": "Reception ledger + fresh empty-room sweep \u2192 evacuation complete.",
+        "summary": "Care home confirmed empty after an earlier transfer."
+      },
+      "truth": {
+        "block": "D2",
+        "people": 0,
+        "severity": "low"
+      },
+      "reveal": "This care home really was evacuated. Building type alone is not enough.",
+      "source": {
+        "block": "D2",
+        "people": 0,
+        "severity": "low"
+      }
+    },
+    {
+      "id": "R10",
+      "at": 157,
+      "title": "Figures behind the clinic",
+      "channel": "sensors",
+      "condition": "Dark / occluded",
+      "raw": "Lower Clinic porter: eight patients on the raised rear terrace. We're waving blankets, not equipment covers.",
+      "sensor": "A3 \u00b7 optical classification: stored equipment. Night exposure, partial canopy obstruction.",
+      "ai": {
+        "block": "A3",
+        "people": 0,
+        "severity": "low",
+        "confidence": 89,
+        "reason": "Rectangular thermal silhouettes matched to equipment covers \u2192 no people detected.",
+        "summary": "Equipment stored on the clinic's rear terrace."
+      },
+      "truth": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high"
+      },
+      "reveal": "The silhouettes are patients under blankets, partly hidden by a canopy.",
+      "source": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R11",
+      "at": 202,
+      "title": "School call: position drift",
+      "channel": "calls",
+      "condition": "Relay degraded",
+      "raw": "North School, C3! We're nine from the evening club. NOT Relay Square. The relay is attaching the wrong address to this call.",
+      "sensor": "Location packet: B3. Relay fallback triangulation active; error radius one sector.",
+      "ai": {
+        "block": "B3",
+        "people": 9,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Fallback relay position \u2192 nine residents assigned to B3.",
+        "summary": "Nine residents need pickup in Relay Square, B3."
+      },
+      "truth": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high"
+      },
+      "reveal": "The caller was at North School, C3. The fallback fix drifted west.",
+      "source": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R12",
+      "at": 208,
+      "title": "Transit depot crew",
+      "channel": "calls",
+      "condition": "Relay degraded",
+      "raw": "Transit Yard depot, D3. Seven mechanics on the inspection deck. Local beacon DY-7 is still transmitting.",
+      "sensor": "D3 \u00b7 local beacon DY-7 received directly. Wide-area relay unavailable.",
+      "ai": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high",
+        "confidence": 86,
+        "reason": "Direct local beacon + caller location agree \u2192 seven residents at D3.",
+        "summary": "Seven mechanics on the depot inspection deck."
+      },
+      "truth": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high"
+      },
+      "reveal": "The direct local beacon was accurate even during the relay outage.",
+      "source": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R13",
+      "at": 216,
+      "title": "Repeated depot transmission",
+      "channel": "calls",
+      "condition": "Relay degraded",
+      "raw": "[RETRANSMIT \u00b7 source DY-7] Transit Yard depot, D3. Seven mechanics on the inspection deck. Local beacon DY-7 is still transmitting.",
+      "sensor": "D3 \u00b7 repeated source DY-7; matching payload. Relay delivery sequence missing.",
+      "ai": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high",
+        "confidence": 93,
+        "reason": "New relay delivery identifier \u2192 additional group of seven at D3.",
+        "summary": "A second group of seven reported at Transit Yard."
+      },
+      "truth": {
+        "block": "D3",
+        "people": 0,
+        "severity": "low",
+        "duplicateOf": "R12"
+      },
+      "reveal": "This is R12 transmitted again, not a second group.",
+      "source": {
+        "block": "D3",
+        "people": 7,
+        "severity": "low"
+      }
+    },
+    {
+      "id": "R14",
+      "at": 225,
+      "title": "Relay engineers stranded",
+      "channel": "calls",
+      "condition": "Relay degraded",
+      "raw": "Two relay engineers in B3, below the square's antenna. Our short-range handset works. The footbridge doesn't.",
+      "sensor": "B3 \u00b7 short-range handset fix stable. Two emergency suit beacons.",
+      "ai": {
+        "block": "B3",
+        "people": 2,
+        "severity": "high",
+        "confidence": 84,
+        "reason": "Independent suit beacons + short-range fix \u2192 two engineers at B3.",
+        "summary": "Two engineers await rescue beneath the relay antenna."
+      },
+      "truth": {
+        "block": "B3",
+        "people": 2,
+        "severity": "high"
+      },
+      "reveal": "The independent beacons remain reliable.",
+      "source": {
+        "block": "B3",
+        "people": 2,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R15",
+      "at": 263,
+      "title": "Hill Homes final pickup",
+      "channel": "calls",
+      "condition": "Restored / routine",
+      "raw": "Hill Homes, A4. Eight residents at the marked access point. Fresh beacon is on. We can see the West Haven sign.",
+      "sensor": "A4 \u00b7 restored relay fix + local beacon + eight optical detections agree.",
+      "ai": {
+        "block": "A4",
+        "people": 8,
+        "severity": "high",
+        "confidence": 95,
+        "reason": "Fresh relay fix and independent beacon agree \u2192 eight residents at A4.",
+        "summary": "Eight residents at the Hill Homes access point."
+      },
+      "truth": {
+        "block": "A4",
+        "people": 8,
+        "severity": "high"
+      },
+      "reveal": "The restored fix is corroborated by the local beacon.",
+      "source": {
+        "block": "A4",
+        "people": 8,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R16",
+      "at": 271,
+      "title": "Late shift at the annex",
+      "channel": "calls",
+      "condition": "Restored / routine",
+      "raw": "Research Annex night shift. Six of us were working late. Reception has our roster; we have not evacuated yet.",
+      "sensor": "B4 \u00b7 six suit beacons. Night-shift roster confirmed. Office use does not imply empty.",
+      "ai": {
+        "block": "B4",
+        "people": 6,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Current staffed-shift roster + six suit beacons \u2192 six residents remain.",
+        "summary": "Six night-shift researchers need transport."
+      },
+      "truth": {
+        "block": "B4",
+        "people": 6,
+        "severity": "high"
+      },
+      "reveal": "Unlike Civic Offices, this workplace has a confirmed occupied night shift.",
+      "source": {
+        "block": "B4",
+        "people": 6,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R17",
+      "at": 279,
+      "title": "Grove Crossing platform",
+      "channel": "sensors",
+      "condition": "Restored / routine",
+      "raw": "Grove Crossing transit marshal. Five passengers left on the raised platform. The stairs are blocked by debris.",
+      "sensor": "C4 \u00b7 five figures under station lighting. Restored location and marshal's call agree.",
+      "ai": {
+        "block": "C4",
+        "people": 5,
+        "severity": "high",
+        "confidence": 96,
+        "reason": "Lit-platform optical count + marshal's location \u2192 five passengers at C4.",
+        "summary": "Five passengers on the raised transit platform."
+      },
+      "truth": {
+        "block": "C4",
+        "people": 5,
+        "severity": "high"
+      },
+      "reveal": "The independently lit scene and current fix are reliable.",
+      "source": {
+        "block": "C4",
+        "people": 5,
+        "severity": "high"
+      }
+    },
+    {
+      "id": "R18",
+      "at": 292,
+      "title": "East Terrace last call",
+      "channel": "calls",
+      "condition": "Restored / routine",
+      "raw": "East Terrace, D4. Seven neighbors at the water tower. One injury; everyone accounted for. The blue beacon is ours.",
+      "sensor": "D4 \u00b7 blue beacon and seven suit signals. Fresh fix, open sightline.",
+      "ai": {
+        "block": "D4",
+        "people": 7,
+        "severity": "high",
+        "confidence": 97,
+        "reason": "Beacon match + caller headcount + fresh location \u2192 seven residents at D4.",
+        "summary": "Seven residents at the East Terrace water tower."
+      },
+      "truth": {
+        "block": "D4",
+        "people": 7,
+        "severity": "high"
+      },
+      "reveal": "All seven residents are at the reported water tower.",
+      "source": {
+        "block": "D4",
+        "people": 7,
+        "severity": "high"
+      }
+    }
+  ],
+  "roadIncidents": [
+    {
+      "id": "RD1",
+      "at": 38,
+      "title": "Collision on Shore Road",
+      "kind": "collision",
+      "edge": [
+        "B1",
+        "C1"
+      ],
+      "workSeconds": 12,
+      "description": "Earthquake shaking overturned a delivery van. Traffic is stopped and pedestrians are spilling around the blockage. Send a ground crew to clear the lane."
+    },
+    {
+      "id": "RD2",
+      "at": 155,
+      "title": "Earthquake fracture at Civic Bridge",
+      "kind": "collapse",
+      "edge": [
+        "B2",
+        "B3"
+      ],
+      "workSeconds": 20,
+      "description": "The earthquake split the bridge approach and dropped debris across the lanes. Ground engineers can open a narrow emergency lane."
+    },
+    {
+      "id": "RD3",
+      "at": 214,
+      "title": "Crowd at School Crossing",
+      "kind": "congestion",
+      "edge": [
+        "C3",
+        "D3"
+      ],
+      "workSeconds": 10,
+      "description": "Evacuees have filled the junction. Vehicles lose eight seconds here. Send a ground team to direct traffic."
+    }
+  ],
+  "colleagues": [
+    {
+      "at": 6,
+      "name": "Mara",
+      "role": "Local liaison",
+      "text": "I know this coast. If a call sounds wrong, read the original before sending anyone.",
+      "noise": false
+    },
+    {
+      "at": 43,
+      "name": "Ellis",
+      "role": "Roads desk",
+      "text": "Shore Road is blocked. A ground team can clear it, but they will be busy for a while.",
+      "noise": false
+    },
+    {
+      "at": 83,
+      "name": "Ellis",
+      "role": "Roads desk",
+      "text": "Are you hungry? I am ordering noodles. No? I will put you down as a maybe.",
+      "noise": true
+    },
+    {
+      "at": 113,
+      "name": "Mara",
+      "role": "Local liaison",
+      "text": "Elder Grove is a care home. A dark window does not mean an empty room.",
+      "noise": false
+    },
+    {
+      "at": 176,
+      "name": "Ellis",
+      "role": "Roads desk",
+      "text": "Does anyone know where the spare cabinet key went? Never mind. Wrong moment.",
+      "noise": true
+    },
+    {
+      "at": 204,
+      "name": "Mara",
+      "role": "Local liaison",
+      "text": "The relay is down. Listen for street names in the calls, not just their location tags.",
+      "noise": false
+    },
+    {
+      "at": 264,
+      "name": "Mara",
+      "role": "Local liaison",
+      "text": "The relay is back. Check the new evidence. You do not need to doubt every report forever.",
+      "noise": false
+    }
+  ],
+  "droneCount": 10
+}

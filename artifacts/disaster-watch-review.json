@@ -1,0 +1,485 @@
+{
+  "mission": "The quiet shore",
+  "saved": 171,
+  "lost": 80,
+  "population": 251,
+  "score": 1735,
+  "efficient": 1,
+  "misled": 0,
+  "caught": 1,
+  "confirmed": 0,
+  "corrections": 1,
+  "groups": [
+    {
+      "condition": "Clear / routine",
+      "total": 6,
+      "correct": 6,
+      "acted": 1,
+      "trusted": 1
+    },
+    {
+      "condition": "Dark / occluded",
+      "total": 2,
+      "correct": 0,
+      "acted": 1,
+      "trusted": 0
+    },
+    {
+      "condition": "Device proxy",
+      "total": 2,
+      "correct": 0,
+      "acted": 0,
+      "trusted": 0
+    },
+    {
+      "condition": "Relay degraded",
+      "total": 4,
+      "correct": 2,
+      "acted": 1,
+      "trusted": 0
+    },
+    {
+      "condition": "Restored / routine",
+      "total": 4,
+      "correct": 4,
+      "acted": 0,
+      "trusted": 0
+    }
+  ],
+  "decisions": [
+    {
+      "time": 1.1446999999970198,
+      "event": "R01",
+      "condition": "Clear / routine",
+      "action": "trust",
+      "aiCorrect": true,
+      "correctOverride": false,
+      "verified": false
+    },
+    {
+      "time": 129.36129999999682,
+      "event": "R06",
+      "condition": "Dark / occluded",
+      "action": "verify",
+      "aiCorrect": false
+    },
+    {
+      "time": 150.82799999999685,
+      "event": "R06",
+      "condition": "Dark / occluded",
+      "action": "informed",
+      "aiCorrect": false,
+      "correctOverride": false,
+      "verified": true
+    },
+    {
+      "time": 205.61129999999702,
+      "event": "R11",
+      "condition": "Relay degraded",
+      "action": "override",
+      "aiCorrect": false,
+      "correctOverride": true,
+      "verified": false
+    }
+  ],
+  "reports": [
+    {
+      "id": "R01",
+      "title": "Stranded at West Dock",
+      "ai": {
+        "block": "A1",
+        "people": 8,
+        "severity": "high",
+        "confidence": 96,
+        "reason": "Eight optical detections + dock dispatcher → eight residents stranded at A1.",
+        "summary": "Eight ferry workers need evacuation from the dock."
+      },
+      "truth": {
+        "block": "A1",
+        "people": 8,
+        "severity": "high"
+      },
+      "rescued": 8,
+      "lost": 0,
+      "actions": [
+        {
+          "time": 1.1446999999970198,
+          "event": "R01",
+          "condition": "Clear / routine",
+          "action": "trust",
+          "aiCorrect": true,
+          "correctOverride": false,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "title": "Market rooftop",
+      "ai": {
+        "block": "B1",
+        "people": 6,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Rooftop beacon + six visible figures → urgent pickup at the market.",
+        "summary": "Six vendors stranded on the market roof."
+      },
+      "truth": {
+        "block": "B1",
+        "people": 6,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 6,
+      "actions": []
+    },
+    {
+      "id": "R03",
+      "title": "Reef Homes stairwell",
+      "ai": {
+        "block": "C1",
+        "people": 10,
+        "severity": "high",
+        "confidence": 93,
+        "reason": "Caller headcount corroborated by local beacon → ten residents at C1.",
+        "summary": "Ten residents isolated above the ground floor."
+      },
+      "truth": {
+        "block": "C1",
+        "people": 10,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 10,
+      "actions": []
+    },
+    {
+      "id": "R04",
+      "title": "Pier maintenance crew",
+      "ai": {
+        "block": "D1",
+        "people": 4,
+        "severity": "high",
+        "confidence": 97,
+        "reason": "Coded work lamp + four optical detections → crew awaiting rescue.",
+        "summary": "Four maintenance workers on the East Pier gantry."
+      },
+      "truth": {
+        "block": "D1",
+        "people": 4,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 4,
+      "actions": []
+    },
+    {
+      "id": "R05",
+      "title": "West Dock second call",
+      "ai": {
+        "block": "A1",
+        "people": 5,
+        "severity": "high",
+        "confidence": 92,
+        "reason": "Distinct warehouse beacon and caller → separate group, not a repeated dock report.",
+        "summary": "Five warehouse staff; a separate group from the first call."
+      },
+      "truth": {
+        "block": "A1",
+        "people": 5,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 5,
+      "actions": []
+    },
+    {
+      "id": "R06",
+      "title": "Elder Grove: low activity",
+      "ai": {
+        "block": "A2",
+        "people": 2,
+        "severity": "low",
+        "confidence": 91,
+        "reason": "Two active signals + no clear optical cluster → low occupancy, low priority.",
+        "summary": "Two possible occupants. Low-priority assistance request."
+      },
+      "truth": {
+        "block": "A2",
+        "people": 12,
+        "severity": "high"
+      },
+      "rescued": 12,
+      "lost": 0,
+      "actions": [
+        {
+          "time": 129.36129999999682,
+          "event": "R06",
+          "condition": "Dark / occluded",
+          "action": "verify",
+          "aiCorrect": false
+        },
+        {
+          "time": 150.82799999999685,
+          "event": "R06",
+          "condition": "Dark / occluded",
+          "action": "informed",
+          "aiCorrect": false,
+          "correctOverride": false,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "id": "R07",
+      "title": "Civic Offices: signal cluster",
+      "ai": {
+        "block": "B2",
+        "people": 84,
+        "severity": "high",
+        "confidence": 98,
+        "reason": "84 active device signals → dense resident cluster, immediate rescue recommended.",
+        "summary": "Large occupancy detected in Civic Offices."
+      },
+      "truth": {
+        "block": "B2",
+        "people": 0,
+        "severity": "low"
+      },
+      "rescued": 0,
+      "lost": 0,
+      "actions": []
+    },
+    {
+      "id": "R08",
+      "title": "Old Quarter: no signals",
+      "ai": {
+        "block": "C2",
+        "people": 0,
+        "severity": "low",
+        "confidence": 95,
+        "reason": "Zero active personal signals → sector likely evacuated. No rescue priority.",
+        "summary": "Old Quarter appears clear; isolated terminal activity."
+      },
+      "truth": {
+        "block": "C2",
+        "people": 10,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 10,
+      "actions": []
+    },
+    {
+      "id": "R09",
+      "title": "Glass Garden care home",
+      "ai": {
+        "block": "D2",
+        "people": 0,
+        "severity": "low",
+        "confidence": 96,
+        "reason": "Reception ledger + fresh empty-room sweep → evacuation complete.",
+        "summary": "Care home confirmed empty after an earlier transfer."
+      },
+      "truth": {
+        "block": "D2",
+        "people": 0,
+        "severity": "low"
+      },
+      "rescued": 0,
+      "lost": 0,
+      "actions": []
+    },
+    {
+      "id": "R10",
+      "title": "Figures behind the clinic",
+      "ai": {
+        "block": "A3",
+        "people": 0,
+        "severity": "low",
+        "confidence": 89,
+        "reason": "Rectangular thermal silhouettes matched to equipment covers → no people detected.",
+        "summary": "Equipment stored on the clinic's rear terrace."
+      },
+      "truth": {
+        "block": "A3",
+        "people": 8,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 8,
+      "actions": []
+    },
+    {
+      "id": "R11",
+      "title": "School call: position drift",
+      "ai": {
+        "block": "B3",
+        "people": 9,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Fallback relay position → nine residents assigned to B3.",
+        "summary": "Nine residents need pickup in Relay Square, B3."
+      },
+      "truth": {
+        "block": "C3",
+        "people": 9,
+        "severity": "high"
+      },
+      "rescued": 9,
+      "lost": 0,
+      "actions": [
+        {
+          "time": 205.61129999999702,
+          "event": "R11",
+          "condition": "Relay degraded",
+          "action": "override",
+          "aiCorrect": false,
+          "correctOverride": true,
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "R12",
+      "title": "Transit depot crew",
+      "ai": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high",
+        "confidence": 86,
+        "reason": "Direct local beacon + caller location agree → seven residents at D3.",
+        "summary": "Seven mechanics on the depot inspection deck."
+      },
+      "truth": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 7,
+      "actions": []
+    },
+    {
+      "id": "R13",
+      "title": "Repeated depot transmission",
+      "ai": {
+        "block": "D3",
+        "people": 7,
+        "severity": "high",
+        "confidence": 93,
+        "reason": "New relay delivery identifier → additional group of seven at D3.",
+        "summary": "A second group of seven reported at Transit Yard."
+      },
+      "truth": {
+        "block": "D3",
+        "people": 0,
+        "severity": "low",
+        "duplicateOf": "R12"
+      },
+      "rescued": 0,
+      "lost": 0,
+      "actions": []
+    },
+    {
+      "id": "R14",
+      "title": "Relay engineers stranded",
+      "ai": {
+        "block": "B3",
+        "people": 2,
+        "severity": "high",
+        "confidence": 84,
+        "reason": "Independent suit beacons + short-range fix → two engineers at B3.",
+        "summary": "Two engineers await rescue beneath the relay antenna."
+      },
+      "truth": {
+        "block": "B3",
+        "people": 2,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 2,
+      "actions": []
+    },
+    {
+      "id": "R15",
+      "title": "Hill Homes final pickup",
+      "ai": {
+        "block": "A4",
+        "people": 8,
+        "severity": "high",
+        "confidence": 95,
+        "reason": "Fresh relay fix and independent beacon agree → eight residents at A4.",
+        "summary": "Eight residents at the Hill Homes access point."
+      },
+      "truth": {
+        "block": "A4",
+        "people": 8,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 8,
+      "actions": []
+    },
+    {
+      "id": "R16",
+      "title": "Late shift at the annex",
+      "ai": {
+        "block": "B4",
+        "people": 6,
+        "severity": "high",
+        "confidence": 94,
+        "reason": "Current staffed-shift roster + six suit beacons → six residents remain.",
+        "summary": "Six night-shift researchers need transport."
+      },
+      "truth": {
+        "block": "B4",
+        "people": 6,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 6,
+      "actions": []
+    },
+    {
+      "id": "R17",
+      "title": "Grove Crossing platform",
+      "ai": {
+        "block": "C4",
+        "people": 5,
+        "severity": "high",
+        "confidence": 96,
+        "reason": "Lit-platform optical count + marshal's location → five passengers at C4.",
+        "summary": "Five passengers on the raised transit platform."
+      },
+      "truth": {
+        "block": "C4",
+        "people": 5,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 5,
+      "actions": []
+    },
+    {
+      "id": "R18",
+      "title": "East Terrace last call",
+      "ai": {
+        "block": "D4",
+        "people": 7,
+        "severity": "high",
+        "confidence": 97,
+        "reason": "Beacon match + caller headcount + fresh location → seven residents at D4.",
+        "summary": "Seven residents at the East Terrace water tower."
+      },
+      "truth": {
+        "block": "D4",
+        "people": 7,
+        "severity": "high"
+      },
+      "rescued": 0,
+      "lost": 7,
+      "actions": []
+    }
+  ]
+}

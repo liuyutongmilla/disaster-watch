@@ -22,4 +22,4 @@ http.createServer(async (req, res) => {
   } catch {
     res.writeHead(404).end('Not found');
   }
-}).listen(port, host, () => console.log(`Disaster Watch is ready at http://${host}:${port}`));
+}).listen(port, host, () => console.log(`Coastal Command is ready at http://${host}:${port}`));

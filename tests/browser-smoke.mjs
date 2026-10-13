@@ -141,7 +141,7 @@ try {
   await send('Browser.setDownloadBehavior',{behavior:'allow',downloadPath:resolve(profile)});
   await click('#export');
   let exported;
-  for(let i=0;i<30;i++){try{exported=JSON.parse(await readFile(join(profile,'disaster-watch-review.json')));break;}catch{await delay(100);}}
+  for(let i=0;i<30;i++){try{exported=JSON.parse(await readFile(join(profile,'coastal-command-review.json')));break;}catch{await delay(100);}}
   check('Review export preserves population accounting',exported?.saved+exported?.lost===exported?.population);
   await shot('debrief-desktop');
   await evaluate('window.__testOffset=0');

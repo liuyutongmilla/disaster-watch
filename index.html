@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#10191d">
   <meta name="description" content="A rescue command game about the judgment between a signal and a decision.">
-  <title>Disaster Watch — Pelagos Command</title>
+  <title>Coastal Command — AI-Assisted Coastal Emergency Response Simulator</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%2310191d'/%3E%3Cpath d='M6 30q9-20 18 0t18 0M6 20q9-20 18 0t18 0' stroke='%23d4ed95' fill='none' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -37,14 +37,14 @@
     </aside>
   </main>
   <div id="pause-screen" class="pause-screen" hidden role="dialog" aria-modal="true" aria-labelledby="pause-title">
-    <div class="pause-card"><span>PELAGOS COMMAND</span><h1 id="pause-title">PAUSED</h1><p>The response clock is stopped.</p><button id="resume" class="primary-button">Resume <small>ESC</small></button></div>
+    <div class="pause-card"><span>COASTAL COMMAND</span><h1 id="pause-title">PAUSED</h1><p>The response clock is stopped.</p><button id="resume" class="primary-button">Resume <small>ESC</small></button></div>
   </div>
   <div id="intro" class="modal-backdrop">
     <section class="briefing modal" role="dialog" aria-modal="true" aria-labelledby="brief-title">
       <div class="brief-header"><span class="eyebrow">PELAGOS CIVIL DEFENSE</span><span class="tag">MISSION 01</span></div>
       <div class="briefing-art" aria-hidden="true"><div class="orbital-ring r1"></div><div class="orbital-ring r2"></div><div class="orbital-ring r3"></div><span class="art-cross">+</span><div class="wave-stroke">≋</div><span class="art-label">A SIGNAL IS NOT THE WHOLE PICTURE.</span></div>
       <span class="eyebrow lime">PELAGOS · FIRST RESPONSE</span>
-      <h1 id="brief-title">Disaster Watch</h1>
+      <h1 id="brief-title">Coastal Command</h1>
       <p class="brief-copy">You have a colony to evacuate and an AI to help you see it. Read the evidence. Send your limited fleet. Know when to trust the picture—and when to look closer.</p>
       <div class="brief-steps"><div><b>01</b><strong>Read the signal</strong><p>Select a report. Its confidence is a claim; its sources are evidence.</p></div><div><b>02</b><strong>Make the call</strong><p>Trust and dispatch, scan with a drone, or correct the assessment.</p></div><div><b>03</b><strong>Guide people out</strong><p>Broadcast a sector's route to a reception hub. Trapped residents need a unit.</p></div></div>
       <div class="brief-bottom"><span>2 ground teams · 2 skiffs · 1 airlift · 10 drones<br><small>Esc pauses. English voices and radio sound enabled at start.</small></span><button id="begin" class="primary-button" disabled>Loading mission… <span>→</span></button></div>

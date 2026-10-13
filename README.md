@@ -1,9 +1,45 @@
-# Disaster Watch
+# 🌊 Coastal Command
 
-An English-language, six-minute rescue-command prototype about calibrated trust in AI. You run a coastal
-evacuation from a dispatch desk: reports arrive by radio, an assistant offers to fuse, filter, route and
-summarize them, and every one of those four functions starts **off**. The assistant's mistakes are scripted,
-so the game is really about when you choose to check it.
+### AI-Assisted Coastal Emergency Response Simulator
+
+**🏆 3rd Place — Defense Tech Jam Hackathon**  
+**48-Hour Hackathon · 6-Person Team · 9 Competing Teams**
+
+> A six-minute, human-in-the-loop coastal evacuation simulator exploring when emergency responders should trust, verify, or override imperfect AI assistance.
+
+<!-- Add your real Vercel deployment URL after deployment. -->
+**[Source Code](https://github.com/liuyutongmilla/disaster-watch)** · **Live Demo: Coming Soon**
+
+![Coastal Command — actual command dashboard](artifacts/command-desktop.png)
+
+## Project overview
+
+Coastal Command is an English-language rescue-command prototype about **calibrated trust in AI**. You run a coastal evacuation from a dispatch desk: reports arrive by radio, an assistant offers to fuse, filter, route, and summarize them, and every one of those four functions starts **off**. The assistant's mistakes are **scripted**—this is a deterministic simulation, not a live LLM or a real emergency response system. The central challenge is deciding when to check the assistant before acting.
+
+**Hackathon context:** Built during a 48-hour Defense Tech Jam with a six-person team; the team placed third among nine teams.
+
+### My contribution
+
+Contributed to the information-filtering MVP for emergency reports, focusing on classification by location, urgency, and relevant response department or unit so incoming information could be routed to the right decision-maker. The project and award were team efforts; the features below describe the full application, not solely my individual work.
+
+### Highlights
+
+- **Human-in-the-loop assistance:** Independently enable AI-style report mapping, noise filtering, route suggestions, and call summaries; inspect original evidence and correct mistakes.
+- **Operational simulation:** Dispatch ground crews, rescue boats, helicopters, and recon drones through evolving road and flood conditions.
+- **Transparent decisions:** Track which reports were verified, which advice was used, and how rescue outcomes changed.
+- **Client-side implementation:** JavaScript, HTML, CSS, Canvas rendering, data-driven deterministic simulation, and a dependency-free Node.js static server.
+
+## Screenshots
+
+**Command dashboard** — live map, radio reports, assistant controls, and dispatch categories (shown above).
+
+**Rescue boat deployment** — route and unit operations.
+
+![Rescue boat deployment](artifacts/boat-deployment-desktop.png)
+
+**After-action review** — simulation results and AI reliance analysis.
+
+![After-action review](artifacts/debrief-desktop.png)
 
 ## Run
 
@@ -37,10 +73,7 @@ The reception-hub selector shows free space after reservations. Each rescue disp
 The application is fixed to the viewport. **Radio** starts clear, then receives the first traffic after a short quiet opening. It uses pale rounded chat bubbles in a separately scrolling panel. Selecting a report expands its evidence, hub choice, correction tools, and available actions in place. Tabs filter Calls, Field, and Roads. When you scroll back, new messages do not pull you away from what you are reading.
 
 - With **Map reports** off, dispatch uses the direct source location. Switching it on adds the assistant's fused markers and assessment, including its scripted mistakes.
-- **Filter noise** removes personal chatter and nonessential colleague interruptions, then focuses Radio on the
-  unit category you have selected. Ground teams lose submerged sectors, drones and the airlift keep every report,
-  and rescue boats keep only waterfront sectors, reports whose text is explicitly water-related, and their own
-  boat traffic. Reports with no remaining people are dropped from the boat view.
+- **Filter noise** removes personal chatter and nonessential colleague interruptions, then focuses Radio on the unit category you have selected. Ground teams lose submerged sectors, drones and the airlift keep every report, and rescue boats keep only waterfront sectors, reports whose text is explicitly water-related, and their own boat traffic. Reports with no remaining people are dropped from the boat view.
 - **Suggest routes** adds route advice. Your actual dispatched routes remain visible regardless.
 - **Summarize calls** replaces the call text with the assistant summary; **Read original call** restores the source for that message.
 
@@ -60,7 +93,7 @@ Mara and Ellis occasionally speak from the left side of the map. Their rounded d
 
 ## Review
 
-At six minutes, inspect rescued/lost residents, condition-level AI reliance, verification outcomes, a decision timeline, and the truth behind all 18 reports. Source-only dispatch is recorded separately from reliance on the assistant. Export the review as JSON or replay; replay resets AI controls to off and restores all unit pools.
+At six minutes, inspect rescued/lost residents, condition-level AI reliance, verification outcomes, a decision timeline, and the truth behind all 24 reports. Source-only dispatch is recorded separately from reliance on the assistant. Export the review as JSON or replay; replay resets AI controls to off and restores all unit pools.
 
 ## Edit and validate
 

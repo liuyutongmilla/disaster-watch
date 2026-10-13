@@ -204,7 +204,7 @@ document.addEventListener('click', async event => {
   if(!state)return;
   if(button.id==='begin'||button.id==='replay'){ await sound.enable();reset(true);return; }
   if(button.id==='restart-link'){reset(false);return;}
-  if(button.id==='export'&&state.ended){const content={...debrief(state),saved:state.saved,lost:state.lost,reports:state.events.map(e=>({id:e.id,ai:e.ai,truth:e.truth,rescued:e.rescued,lost:e.lost}))};const url=URL.createObjectURL(new Blob([JSON.stringify(content,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='disaster-watch-review.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
+  if(button.id==='export'&&state.ended){const content={...debrief(state),saved:state.saved,lost:state.lost,reports:state.events.map(e=>({id:e.id,ai:e.ai,truth:e.truth,rescued:e.rescued,lost:e.lost}))};const url=URL.createObjectURL(new Blob([JSON.stringify(content,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='coastal-command-review.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}
   if(state.ended)return;
   if(button.dataset.kind){state.selectedKind=button.dataset.kind;render();return;}
   if(button.dataset.original){const id=button.dataset.original;expandedSources.has(id)?expandedSources.delete(id):expandedSources.add(id);render();return;}
